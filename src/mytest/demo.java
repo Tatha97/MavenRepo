@@ -11,13 +11,13 @@ public class demo {
 
 	
 	WebDriver delegate;
-	SelfHealingDriver driver;
+	//SelfHealingDriver driver;
 	@BeforeMethod
 	public void setupDriver() {
 try {
 		System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win32\\chromedriver.exe");
 		delegate = new ChromeDriver();
-		driver= SelfHealingDriver.create(delegate);
+		//driver= SelfHealingDriver.create(delegate);
 }
 	catch(Exception e) {
 		e.printStackTrace();
@@ -28,7 +28,7 @@ try {
 	public void test() {
 		
 		try{
-			driver.get("https://www.amazon.in/");
+			delegate.get("https://www.amazon.in/");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
